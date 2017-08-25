@@ -1,17 +1,18 @@
-## udacity_d3_visualization
+# udacity_d3_visualization
 
-# Summary
-
-***
-
-# Design
+## Summary
 
 ***
-# Feedback
+
+## Design
+
+***
+## Feedback
 
 
-# Resources
+## Resources
 
 dimple.js Documentation
+
 Data Visualization and D3.js (Udacity)
 
