@@ -8,6 +8,7 @@ This is one of the project work for Udacity - Data Analyst Nano Degree. The goal
 ## Design
 
 The goals are to: 1. Demonstrate if survival rate is dependent on gender, class and age.
+
                   2. Show passenger distribution of the above features and get some findings on passenger counts. 
 Bar chart is suitable for both purposes. Through breaking down at different level, we are able to see clearly which bucket has the highest survival rate or survival counts.
 So for each feature, i will create two bar charts. One for survival rate, one for passenger count.
