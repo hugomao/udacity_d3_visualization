@@ -31,7 +31,7 @@ So for each feature, i will create two bar charts. One for survival rate, one fo
 
 ## Feedback
 
-None feedback yet.
+No feedback yet.
 
 ## Resources
 
