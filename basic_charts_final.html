@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+    <script type="text/javascript">
+      function draw_sex(data) {
+
+          "use strict";
+          var margin = 100,
+              width = 700 - margin,
+              height = 400 - margin;
+          
+          debugger;
+          
+
+          var svg_sex = d3.select("body")
+            .append("svg")
+              .attr("width", width + margin)
+              .attr("height", height + margin)
+            .append('g')
+                .attr('class','chart');
+
+          var myChart = new dimple.chart(svg_sex, data);
+          myChart.setBounds(60, 30, 510, 305)
+          var x = myChart.addCategoryAxis("x", "Sex");
+          x.addOrderRule(["male","female"]);
+          var y = myChart.addPctAxis("y", "Number");
+          y.showGridlines = false;
+          y.title = "Survival Percentage";
+          var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
+          mySeries.aggregate = dimple.aggregateMethod.count;
+          myChart.addLegend(200, 10, 380, 200, "right");
+          myChart.draw();
+          
+          svg_sex.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
+          .style("text-anchor", "middle").style("font-family", "sans-serif")
+          .style("font-weight", "bold").text("Gender Breakdown (percentage)");
+        };
+        
+        
+        function draw_sex_cnt(data) {
+
+          "use strict";
+          var margin = 100,
+              width = 700 - margin,
+              height = 400 - margin;
+          
+          debugger;
+          
+
+          var svg_sex = d3.select("body")
+            .append("svg")
+              .attr("width", width + margin)
+              .attr("height", height + margin)
+            .append('g')
+                .attr('class','chart');
+
+          var myChart = new dimple.chart(svg_sex, data);
+          myChart.setBounds(60, 30, 510, 305)
+          var x = myChart.addCategoryAxis("x", "Sex");
+          x.addOrderRule(["male","female"]);
+          var y = myChart.addMeasureAxis("y", "Number");
+          y.showGridlines = false;
+          y.title = "Survival Count";
+          var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
+          mySeries.aggregate = dimple.aggregateMethod.count;
+          myChart.addLegend(200, 10, 380, 200, "right");
+          myChart.draw();
+          
+          svg_sex.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
+          .style("text-anchor", "middle").style("font-family", "sans-serif")
+          .style("font-weight", "bold").text("Gender Breakdown (count)");
+        };
+        
+        
+        function draw_Pclass(data) {
+      
+
+          "use strict";
+          var margin = 1,
+              width = 700 - margin,
+              height = 400 - margin;
+          
+          debugger;
+          
+     
+          var svg_class = d3.select("body")
+            .append("svg")
+              .attr("width", width + margin)
+              .attr("height", height + margin)
+            .append('g')
+                .attr('class','chart');
+
+
+          var myChart = new dimple.chart(svg_class, data);
+          myChart.setBounds(60, 30, 510, 305)
+          var x = myChart.addCategoryAxis("x", "Pclass");
+          var y = myChart.addPctAxis("y", "Number");
+          y.showGridlines = false;
+          y.title = "Survival Percentage";
+          var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
+          mySeries.aggregate = dimple.aggregateMethod.count;
+          myChart.addLegend(200, 10, 380, 200, "right");
+          myChart.draw();
+            
+          svg_class.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
+          .style("text-anchor", "middle").style("font-family", "sans-serif")
+          .style("font-weight", "bold").text("Class Breakdown (percentage)");
+        };
+        
+        function draw_Pclass_cnt(data) {
+      
+
+          "use strict";
+          var margin = 1,
+              width = 700 - margin,
+              height = 400 - margin;
+          
+          debugger;
+          
+     
+          var svg_class = d3.select("body")
+            .append("svg")
+              .attr("width", width + margin)
+              .attr("height", height + margin)
+            .append('g')
+                .attr('class','chart');
+
+
+          var myChart = new dimple.chart(svg_class, data);
+          myChart.setBounds(60, 30, 510, 305)
+          var x = myChart.addCategoryAxis("x", "Pclass");
+          var y = myChart.addMeasureAxis("y", "Number");
+          y.showGridlines = false;
+          y.title = "Survival Count";
+          var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
+          mySeries.aggregate = dimple.aggregateMethod.count;
+          myChart.addLegend(200, 10, 380, 200, "right");
+          myChart.draw();
+            
+          svg_class.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
+          .style("text-anchor", "middle").style("font-family", "sans-serif")
+          .style("font-weight", "bold").text("Class Breakdown (count)");
+        };
+        
+        
+        
+        function draw_age(data) {
+      
+
+          "use strict";
+          var margin = 100,
+              width = 700 - margin,
+              height = 400 - margin;
+          
+          debugger;
+          
+     
+          var svg_age = d3.select("body")
+            .append("svg")
+              .attr("width", width + margin)
+              .attr("height", height + margin)
+            .append('g')
+                .attr('class','chart');
+
+
+          var myChart = new dimple.chart(svg_age, data);
+          myChart.setBounds(60, 30, 510, 305)
+          var x = myChart.addCategoryAxis("x", "age_bucket");
+          x.addOrderRule(["0-10","11-20","21-30","31-40","41-50","51-60","61-70","71-80","unknown"]);
+          var y = myChart.addPctAxis("y", "Number");
+          y.showGridlines = false;
+          y.title = "Survival Percentage";
+          var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
+          mySeries.aggregate = dimple.aggregateMethod.count;
+          myChart.addLegend(200, 10, 380, 200, "right");
+          myChart.draw();
+            
+          svg_age.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
+          .style("text-anchor", "middle").style("font-family", "sans-serif")
+          .style("font-weight", "bold").text("Age Breakdown (percentage)");
+        };
+        
+        
+        function draw_age_cnt(data) {
+      
+
+          "use strict";
+          var margin = 100,
+              width = 700 - margin,
+              height = 400 - margin;
+          
+          debugger;
+          
+     
+          var svg_age = d3.select("body")
+            .append("svg")
+              .attr("width", width + margin)
+              .attr("height", height + margin)
+            .append('g')
+                .attr('class','chart');
+
+
+          var myChart = new dimple.chart(svg_age, data);
+          myChart.setBounds(60, 30, 510, 305)
+          var x = myChart.addCategoryAxis("x", "age_bucket");
+          x.addOrderRule(["0-10","11-20","21-30","31-40","41-50","51-60","61-70","71-80","unknown"]);
+          var y = myChart.addMeasureAxis("y", "Number");
+          y.showGridlines = false;
+          y.title = "Survival Percentage";
+          var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
+          mySeries.aggregate = dimple.aggregateMethod.count;
+          myChart.addLegend(200, 10, 380, 200, "right");
+          myChart.draw();
+            
+          svg_age.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
+          .style("text-anchor", "middle").style("font-family", "sans-serif")
+          .style("font-weight", "bold").text("Age Breakdown (count)");
+        };
+        
+        
+      </script>
+    <style>
+        circle.dimple-series-0 {
+            fill:red;
+        }
+    </style>
+  </head>
+<body>
+    <div>
+        <h2 style="text-align:center;">Vidualization of Titanic Dataset</h2>
+        <p>
+        This is one of the project work for Udacity - Data Analyst Nano Degree. The goal is to create an explanatory data visualization from a data set that communicates a clear finding or that highlights relationships or patterns. Titanic dataset from Kaggle was selected as the source data for this project.
+        </p>
+        <p>
+        Through breaking down at different level, we are able to see clearly which bucket has the highest survival rate or survival counts.
+        </p>
+      <script type="text/javascript">
+      /*
+        Use D3 (not dimple.js) to load the TSV file
+        and pass the contents of it to the draw function
+        */  
+      d3.csv("/data/titanic_data_new.csv", draw_sex);
+      d3.csv("/data/titanic_data_new.csv", draw_sex_cnt);
+      d3.csv("/data/titanic_data_new.csv", draw_Pclass);
+      d3.csv("/data/titanic_data_new.csv", draw_Pclass_cnt);
+      d3.csv("/data/titanic_data_new.csv", draw_age);
+      d3.csv("/data/titanic_data_new.csv", draw_age_cnt);
+      </script>
+    </div>
+</body>
+</html>
