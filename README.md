@@ -30,12 +30,26 @@ So for each feature, i will create two bar charts. One for survival rate, one fo
  Survival rate for kids(<= 10 years old) is significantly higher than other age groups, and survival rate for seniors(>= 61) are significantly lower than other groups.
 
 ## Feedback
+I shared the visualization with three firends and here're the comments:
 
-No feedback yet.
+#### Feedback A:
+
+I think the story and analysis makes sense. But for the visualization, there're some places you could make better. For example, You could add some introductions and explanations at the beginning so that readers could undertand the purpose.
+
+#### Feedback B:
+
+I like your visualizations, each plot shares stories but one suggestion: Adding legend to each plot so that we would associate each color in th plot to one group. Now if you don;t tell us we dont know Red means Survived.
+
+#### Feedback C:
+
+Love the plots you made but i would recommending not adding underscore as seperation in the title because its not visually good. Using bracket instead.
+
 
 ## Resources
 
 dimple.js Documentation
 
 Data Visualization and D3.js (Udacity)
+
+
 
