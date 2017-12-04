@@ -5,14 +5,14 @@
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
     <script type="text/javascript">
-      function draw_sex(data) {
+      function draw_sex(data) { 
+      //function of drawing bar plot survival percentage by gender
 
           "use strict";
           var margin = 100,
               width = 700 - margin,
               height = 400 - margin;
           
-          debugger;
           
 
           var svg_sex = d3.select("body")
@@ -24,14 +24,18 @@
 
           var myChart = new dimple.chart(svg_sex, data);
           myChart.setBounds(60, 30, 510, 305)
-          var x = myChart.addCategoryAxis("x", "Sex");
+          var x = myChart.addCategoryAxis("x", "Sex"); //set x axis
           x.addOrderRule(["male","female"]);
-          var y = myChart.addPctAxis("y", "Number");
+          var y = myChart.addPctAxis("y", "Number"); //set y axis
           y.showGridlines = false;
           y.title = "Survival Percentage";
           var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
-          mySeries.aggregate = dimple.aggregateMethod.count;
-          myChart.addLegend(200, 10, 380, 200, "right");
+          mySeries.aggregate = dimple.aggregateMethod.count; //set value of aggregation
+          myChart.addLegend(300, 10, 380, 200, "right"); //add legend
+          myChart.defaultColors = [
+          new dimple.color("#e74c3c", "#c0392b", 1), // red
+          new dimple.color("#3498db", "#2980b9", 1), // blue
+          ]; //set survived as blue, and unsurvived as red
           myChart.draw();
           
           svg_sex.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
@@ -41,13 +45,13 @@
         
         
         function draw_sex_cnt(data) {
+          //function of drawing bar plot survival passenger count  by gender
 
           "use strict";
           var margin = 100,
               width = 700 - margin,
               height = 400 - margin;
           
-          debugger;
           
 
           var svg_sex = d3.select("body")
@@ -65,8 +69,12 @@
           y.showGridlines = false;
           y.title = "Survival Count";
           var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
-          mySeries.aggregate = dimple.aggregateMethod.count;
-          myChart.addLegend(200, 10, 380, 200, "right");
+          mySeries.aggregate = dimple.aggregateMethod.count; //set value of aggregation
+          myChart.addLegend(300, 10, 380, 200, "right");
+          myChart.defaultColors = [
+          new dimple.color("#e74c3c", "#c0392b", 1), // red
+          new dimple.color("#3498db", "#2980b9", 1), // blue
+          ]; //set survived as blue, and unsurvived as red
           myChart.draw();
           
           svg_sex.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
@@ -76,14 +84,13 @@
         
         
         function draw_Pclass(data) {
-      
+      //function of drawing bar plot survival passenger percentage  by class
 
           "use strict";
           var margin = 1,
               width = 700 - margin,
               height = 400 - margin;
           
-          debugger;
           
      
           var svg_class = d3.select("body")
@@ -101,8 +108,12 @@
           y.showGridlines = false;
           y.title = "Survival Percentage";
           var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
-          mySeries.aggregate = dimple.aggregateMethod.count;
-          myChart.addLegend(200, 10, 380, 200, "right");
+          mySeries.aggregate = dimple.aggregateMethod.count;//set value of aggregation
+          myChart.addLegend(300, 10, 380, 200, "right");
+          myChart.defaultColors = [
+          new dimple.color("#e74c3c", "#c0392b", 1), // red
+          new dimple.color("#3498db", "#2980b9", 1), // blue
+          ]; //set survived as blue, and unsurvived as red
           myChart.draw();
             
           svg_class.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
@@ -111,14 +122,13 @@
         };
         
         function draw_Pclass_cnt(data) {
-      
+      //function of drawing bar plot survival passenger count by class
 
           "use strict";
           var margin = 1,
               width = 700 - margin,
               height = 400 - margin;
           
-          debugger;
           
      
           var svg_class = d3.select("body")
@@ -136,8 +146,12 @@
           y.showGridlines = false;
           y.title = "Survival Count";
           var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
-          mySeries.aggregate = dimple.aggregateMethod.count;
-          myChart.addLegend(200, 10, 380, 200, "right");
+          mySeries.aggregate = dimple.aggregateMethod.count;//set value of aggregation
+          myChart.addLegend(300, 10, 380, 200, "right");
+          myChart.defaultColors = [
+          new dimple.color("#e74c3c", "#c0392b", 1), // red
+          new dimple.color("#3498db", "#2980b9", 1), // blue
+          ]; //set survived as blue, and unsurvived as red
           myChart.draw();
             
           svg_class.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
@@ -148,14 +162,13 @@
         
         
         function draw_age(data) {
-      
+      //function of drawing bar plot survival passenger percentage by age bucket
 
           "use strict";
           var margin = 100,
               width = 700 - margin,
               height = 400 - margin;
           
-          debugger;
           
      
           var svg_age = d3.select("body")
@@ -174,8 +187,12 @@
           y.showGridlines = false;
           y.title = "Survival Percentage";
           var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
-          mySeries.aggregate = dimple.aggregateMethod.count;
-          myChart.addLegend(200, 10, 380, 200, "right");
+          mySeries.aggregate = dimple.aggregateMethod.count;//set value of aggregation
+          myChart.addLegend(300, 10, 380, 200, "right");
+          myChart.defaultColors = [
+          new dimple.color("#e74c3c", "#c0392b", 1), // red
+          new dimple.color("#3498db", "#2980b9", 1), // blue
+          ]; //set survived as blue, and unsurvived as red
           myChart.draw();
             
           svg_age.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
@@ -185,14 +202,13 @@
         
         
         function draw_age_cnt(data) {
-      
+      //function of drawing bar plot survival passenger count by age bucket
 
           "use strict";
           var margin = 100,
               width = 700 - margin,
               height = 400 - margin;
           
-          debugger;
           
      
           var svg_age = d3.select("body")
@@ -211,8 +227,12 @@
           y.showGridlines = false;
           y.title = "Survival Percentage";
           var mySeries = myChart.addSeries("Survived", dimple.plot.bar);
-          mySeries.aggregate = dimple.aggregateMethod.count;
-          myChart.addLegend(200, 10, 380, 200, "right");
+          mySeries.aggregate = dimple.aggregateMethod.count;//set value of aggregation
+          myChart.addLegend(300, 10, 380, 200, "right");
+          myChart.defaultColors = [
+          new dimple.color("#e74c3c", "#c0392b", 1), // red
+          new dimple.color("#3498db", "#2980b9", 1), // blue
+          ]; //set survived as blue, and unsurvived as red
           myChart.draw();
             
           svg_age.append("text").attr("x", myChart._xPixels() + myChart._widthPixels() / 2).attr("y", myChart._yPixels() - 15)
